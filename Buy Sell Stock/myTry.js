@@ -16,16 +16,10 @@ function buySellStock(prices) {
       currentProfit = prices[sell] - prices[buy];
       if (currentProfit > finalProfit && currentProfit > 0) {
         finalProfit = currentProfit;
-        console.log(currentProfit);
-        console.log(finalProfit);
-        break;
       }
-      console.log(currentProfit);
-      console.log(finalProfit);
     }
   }
-  console.log(currentProfit + " current profit");
-  console.log(finalProfit + " final profit");
+
   return finalProfit;
 }
 let result = buySellStock(prices);
