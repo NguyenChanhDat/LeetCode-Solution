@@ -4,6 +4,9 @@
 // Output: 2
 let nums = [2, 2, 1, 1, 1, 2, 2];
 function majorityElement(nums) {
+  if (nums.length == 1) {
+    return nums[0];
+  }
   nums.sort((a, b) => a - b);
   console.log(nums);
   let majorityNumber = Math.floor(nums.length / 2);
