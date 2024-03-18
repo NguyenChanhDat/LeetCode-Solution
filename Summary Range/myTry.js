@@ -11,24 +11,25 @@
 // [0,2] --> "0->2"
 // [4,5] --> "4->5"
 // [7,7] --> "7"
-let nums = [0, 1, 2, 4, 5, 7];
+let nums = [0, 2, 3, 4, 6, 8, 9];
 function summaryRange(nums) {
   let stringArrayResult = [];
   let firstPointer = 0,
     secondPointer = 1;
-  while (secondPointer != nums.length) {
+  while (secondPointer != nums.length + 1) {
     if (nums[secondPointer] != nums[secondPointer - 1] + 1) {
-      stringArrayResult.push(
-        "" + nums[firstPointer] + "->" + nums[secondPointer - 1]
-      );
+      if (secondPointer - firstPointer == 1) {
+        stringArrayResult.push("" + nums[firstPointer]);
+      } else {
+        stringArrayResult.push(
+          "" + nums[firstPointer] + "->" + nums[secondPointer - 1]
+        );
+      }
       firstPointer = secondPointer;
     }
-    console.log(secondPointer);
+    // console.log(firstPointer + " first Pointer");
+    // console.log(secondPointer + " second Pointer");
     secondPointer++;
-  }
-  console.log(secondPointer);
-  if (firstPointer == nums.length - 1) {
-    stringArrayResult.push("" + nums[nums.length - 1]);
   }
   return stringArrayResult;
 }
