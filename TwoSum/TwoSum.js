@@ -15,3 +15,20 @@ function takeAction(nums, target) {
 }
 let result = takeAction(arr, target);
 console.log(result);
+
+// O(n) time complexity 
+const takeAction2=(nums,target) =>{
+    let arrResult =[]
+   const hashMap =new Map()
+   nums.forEach((num,index) =>{
+     if(hashMap.has(target-num)){
+        arrResult.push(index)
+        arrResult.push(hashMap.get(target-num))
+        }else{
+        hashMap.set(num, index)
+        }
+    }
+    return arrResult
+}
+        
+     
